@@ -1,0 +1,32 @@
+<div class="col-md-2" [formGroup]="addForm">
+	<div class="form-group">
+		<label class="label-control">Items</label>
+		<br>
+
+		
+		<table>
+			<thead>
+				<button (click)="onAddRow()" >add row</button>
+			</thead>
+			<tbody>
+				<tr *ngFor="let row of addForm.get('rows')?.controls;">
+          <td>
+            name : <input [formControl]="row.get('name')">
+          </td>
+          <td>
+            description : <input [formControl]="row.get('description')">
+          </td>
+          <td>
+            qty : <input [formControl]="row.get('qty')">
+          </td>
+          <td>
+            <button (click)="onRemoveRow(index)">Remove</button>
+          </td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+</div>
+
